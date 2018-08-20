@@ -28,20 +28,20 @@ describe('Calculator', function() {
 		document.getElementById('x').value = 1;
 		document.getElementById('y').value = 2;
 		document.getElementById('add').click();
-		expect(document.getElementById('result').innerHTML).toBe('3');
+		expect(document.getElementById('result').innerHTML).equal('3');
 	});
 
 	it('should calculate zero for invalid x value', function() {
 		document.getElementById('x').value = 'hello';
 		document.getElementById('y').value = 2;
 		document.getElementById('add').click();
-		expect(document.getElementById('result').innerHTML).toBe('0');
+		expect(document.getElementById('result').innerHTML).equal('0');
 	});
 
 	it('should calculate zero for invalid y value', function() {
 		document.getElementById('x').value = 1;
 		document.getElementById('y').value = 'goodbye';
 		document.getElementById('add').click();
-		expect(document.getElementById('result').innerHTML).toBe('0');
+		expect(document.getElementById('result').innerHTML).equal('0');
 	});
 });
