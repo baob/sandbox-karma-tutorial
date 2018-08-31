@@ -3,6 +3,15 @@
 
 module.exports = function(config) {
 	config.set({
+		// plugins: [
+		// 	'karma-mocha',
+		// 	'karma-chai',
+		// 	'karma-fixture',
+		// 	'karma-html2js-preprocessor',
+		// 	'karma-json-fixtures-preprocessor',
+		// 	'karma-phantomjs-launcher'
+		// ],
+
 		// base path that will be used to resolve all patterns (eg. files, exclude)
 		basePath: '',
 
@@ -19,13 +28,13 @@ module.exports = function(config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
-			'**/*.html': ['html2js'],
-			'**/*.json': ['json_fixtures']
+			'**/*.html': ['html2js']
+			// '**/*.json': ['json_fixtures']
 		},
 
-		jsonFixturesPreprocessor: {
-			variableName: '__json__'
-		},
+		// jsonFixturesPreprocessor: {
+		// 	variableName: '__json__'
+		// },
 
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
@@ -47,7 +56,8 @@ module.exports = function(config) {
 
 		// start these browsers
 		// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-		browsers: ['Chrome'],
+		browsers: ['PhantomJS'],
+		// browsers: ['Chrome'],
 
 		// Continuous Integration mode
 		// if true, Karma captures browsers, runs the tests and exits
@@ -55,6 +65,8 @@ module.exports = function(config) {
 
 		// Concurrency level
 		// how many browser should be started simultaneous
-		concurrency: Infinity
+		concurrency: Infinity,
+
+		logLevel: config.LOG_DEBUG
 	});
 };
